@@ -1,54 +1,70 @@
 # ARCHITECTURE.md
 
-## -> Architectural system and format of the repository.
+## 📌 Overview
 
-# ->> General: ROBLOX Luau systems and repository for the scripts and codes of the ROBLOX Game Noobs V.S. Zombies: Frontier Defense, a multiplayer game rich of advanced-like
-systems or more in general.
+This repository contains the Luau-based architecture and scripts of the ROBLOX multiplayer game **Noobs V.S. Zombies: Frontier Defense** — a game rich with complex systems, modular logic, and scalable design.
 
-# ->> Repository File Structure
+---
+
+## 🗂️ Repository Structure
 
 /main
 ├── /files # ROBLOX place & model files
-│ ├── *.rbxl # Place files
+│ ├── *.rbxl # Binary place files
 │ ├── *.rbxlx # XML-based place files
-│ ├── *.rbxm # Model files
-│ └── *.rbxmx_old # Legacy or backup model files
+│ ├── *.rbxm # Binary model files
+│ └── *.rbxmx_old # Legacy or backup models
 │
-├── /scripts # Core game logic, split by context
-│ ├── /server # Scripts that run on the server
+├── /scripts # Core game logic
+│ ├── /server # Server-side logic
 │ │ ├── /modules
-│ │ │ ├── coremodules # Game engine modules (data, networking, core logic)
-│ │ │ ├── defmodules # Default game mechanics (inventory, combat)
-│ │ │ └── genmodules # Generated content (procedural systems, loot)
+│ │ │ ├── coremodules # Engine-level systems (data, networking, core)
+│ │ │ ├── defmodules # Default game systems (inventory, combat)
+│ │ │ └── genmodules # Procedural systems (NPCs, loot)
 │ │ └── /defaultcodes
-│ │ ├── corescripts # Initialization scripts
-│ │ ├── defscripts # Server-side behavior scripts
-│ │ └── genscripts # Server logic for dynamic generation
-│ │
-│ └── /local # Scripts that run on the client
+│ │ ├── corescripts # Server initialization logic
+│ │ ├── defscripts # Server behavior logic
+│ │ └── genscripts # Runtime-generated systems
+│
+│ └── /local # Client-side logic
 │ ├── /modules
-│ │ ├── coremodules # UI managers, input handlers, settings
-│ │ ├── defmodules # Reusable local components
-│ │ └── genmodules # Visual or reactive scripts
+│ │ ├── coremodules # UI managers, input handling
+│ │ ├── defmodules # Reusable client modules
+│ │ └── genmodules # Visual effects or reactive scripts
 │ └── /defaultcodes
-│ ├── corescripts # Client bootstrapping logic
-│ ├── defscripts # UI logic, effects, HUD
-│ └── genscripts # Client-side dynamic behaviors
+│ ├── corescripts # Client bootstrapping
+│ ├── defscripts # UI effects, HUD, overlays
+│ └── genscripts # Client-side dynamic behavior
 
-## Conventions
+---
 
-- Modules = Modular systems set up within the game in an organized place used by their respective scripts, usually in large-scale.
-- `core`, `def`, `gen` structure helps separate responsibilities:
-  - `core`: foundational systems
-  - `def`: default/standard gameplay logic/non-gameplay logic.
-  - `gen`: procedural or runtime-generated on general scripts.
+## 📦 Conventions
 
-##
+- **Modules**: Reusable Lua systems used by client or server logic, usually encapsulating functionality (e.g. combat, movement, UI).
+- `core`, `def`, and `gen` prefixes indicate:
+  - `core`: foundational systems (frameworks, startup logic)
+  - `def`: default, static systems (standard gameplay, common patterns)
+  - `gen`: dynamically generated content (loot tables, procedural systems)
 
-# ->> Script communication: Script communication can happen between codes through the useage of modules or events such as RemoteEvent, BindableFunction, BindableEvent, etc.
-# ->>> For more information on events, please read: [https://create.roblox.com/docs/scripting/events].
+---
 
-## -> Related documents:
+## 🔁 Script Communication
 
-[README.md](./README.md) for documentation 1 (if you have not been redirected from there.
-[AGENTS.md](./AGENTS.md) for documentation 2
+Scripts interact via:
+- **Modules** (`require`) for code reuse
+- **RemoteEvents / RemoteFunctions** for client-server communication
+- **BindableEvents / BindableFunctions** for in-context messaging (server-server or client-client)
+
+For more about ROBLOX events:
+- [ROBLOX Events Overview](https://create.roblox.com/docs/scripting/events)
+- [Bindable Events](https://create.roblox.com/docs/pt-br/scripting/events/bindable)
+- [Remote Events](https://create.roblox.com/docs/pt-br/scripting/events/remote)
+
+---
+
+## 📚 Related Documentation
+
+- [📖 Main Documentation (README)](./README.md) -- If the individual has not been redirected from there to here.
+- [🤖 Agent Setup](./AGENTS.md)
+
+

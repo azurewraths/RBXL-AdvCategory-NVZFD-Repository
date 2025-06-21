@@ -1,0 +1,40 @@
+# A fast, small, safe, gradually typed embeddable scripting language derived from Lua
+#
+# https://github.com/luau-lang/luau
+# https://luau.org/
+
+# Code coverage
+coverage.out
+
+# Profiling
+profile.out
+profile.svg
+
+# Time trace
+trace.json
+
+#Alternality: 
+
+# ROBLOX / Luau project
+
+# Logs and temp
+*.log
+*.tmp
+
+# Luau build artifacts (if you're using roblox-ts or Rojo)
+out/
+build/
+*.d.ts
+
+# VS Code
+.vscode/
+
+# Rojo project config (optional if auto-generated)
+*.project.json
+
+# Node modules (if using roblox-ts or npm tooling)
+node_modules/
+
+# OS junk
+.DS_Store
+Thumbs.db

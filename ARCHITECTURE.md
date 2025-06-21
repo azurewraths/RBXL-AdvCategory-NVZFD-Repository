@@ -50,5 +50,5 @@ systems or more in general.
 
 ## -> Related documents:
 
-[RBXL-AdvCategory-NVZFD Repository](./README.md) for documentation 1 (if you have not been redirected from there.
-[RBXL-AdvCategory-NVZFD Repository](./AGENTS.md) for documentation 2
+[README.md](./README.md) for documentation 1 (if you have not been redirected from there.
+[AGENTS.md](./AGENTS.md) for documentation 2

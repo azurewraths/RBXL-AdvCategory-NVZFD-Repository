@@ -21,7 +21,7 @@ trace.json
 *.log
 *.tmp
 
-# Luau build artifacts (if you're using roblox-ts or Rojo)
+# Luau build artifacts (if we'd be using roblox-ts or Rojo)
 out/
 build/
 *.d.ts
@@ -32,7 +32,7 @@ build/
 # Rojo project config (optional if auto-generated)
 *.project.json
 
-# Node modules (if using roblox-ts or npm tooling)
+# Node modules (if we'd be using roblox-ts or npm tooling)
 node_modules/
 
 # OS junk
